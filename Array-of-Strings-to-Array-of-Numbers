@@ -1,0 +1,45 @@
+// Array of Strings to Array of Numbers
+// example input: ["1", "3", "3.6"] output ➞ [1, 3, 3]
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$strnum=["1","2.6","dfgdsfgd","3"];
+$num=array();
+$numj=array();
+echo "Type = ".(gettype($strnum[0]))."<br>";
+print_r($strnum);
+echo "<br>";
+$n=strnumtonum($strnum);
+$nn=$n['result'];
+echo "Type = ".(gettype($nn[0]))."<br>";
+print_r($n);
+
+function strnumtonum($strnum){
+
+  $length=count($strnum);
+  $i=0;$j=0;
+  while($i!=$length)
+  {
+    if(is_numeric($strnum[$i]))
+    {
+      echo $num[$j]=(int)$strnum[$i];
+      $i++;$j++;
+    }
+    else
+    {
+
+     $numj['note']="$strnum contain non numeric value \"$strnum[$i]\" at index $i";
+          $i++;
+    }
+  }
+  $numj['result']=$num;
+  return $numj;
+  }
+
+
+?>
+
+</body>
+</html>
